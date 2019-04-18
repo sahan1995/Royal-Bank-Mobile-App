@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Transfer Money
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Select Your Account</ion-list-header>
+
+    <ion-item>
+      <ion-label>Account Number</ion-label>
+      <ion-select placeholder="Select One" *ngFor="let acc of accounts" (ionChange)="findAccount()" [(ngModel)]="accno">
+        <ion-select-option>{{acc.accountNumber}}</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-card *ngIf="accselect">
+    <ion-card-header>
+      <ion-card-subtitle><b>Your Account Details</b></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Account Number : <b>{{accno}}</b><br>
+      Account Type   : <b>{{acctype}}</b><br>
+      Account Balance : <b>Rs.{{amount}}.00</b>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="8">
+      <ion-item>
+        <ion-label position="floating">Deposit Account Number</ion-label>
+        <ion-input [(ngModel)]="depoAccno"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button expand="block" (click)="findDepoAccount()">Find</ion-button>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-item>
+    <ion-label position="floating">Amount</ion-label>
+    <ion-input type="number" [(ngModel)]="depoAmount" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-card *ngIf="Depoaccselect">
+    <ion-card-header>
+      <ion-card-subtitle><b>Deposit Account Details</b></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Account Number : <b>{{depoAccno}}</b><br>
+      Holder Name : <b>Mr {{depoName}}</b><br>
+      Account Type   : <b>{{depoAcctype}}</b><br>
+
+    </ion-card-content>
+  </ion-card>
+  <br>
+
+  <ion-button expand="block" (click)="transferMoney()">Transfer</ion-button>
+</ion-content>
