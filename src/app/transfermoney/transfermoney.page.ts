@@ -105,7 +105,8 @@ export class TransfermoneyPage implements OnInit {
 
 
         },error1 => {
-            this.transfer.findAccountServer1(this.accno).subscribe(result=>{
+            this.transfer.findAccountServer1(this.depoAccno).subscribe(result=>{
+                console.log(result);
                 this.depositDTO = result;
                 this.depoName = result["clientDTO"]["fname"] + " " + result["clientDTO"]["lname"]
                 this.depoAcctype = result["accountType"];

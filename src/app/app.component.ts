@@ -24,6 +24,10 @@ export class AppComponent {
             title: 'Transfer Money',
             url: '/transfermoney',
             icon: 'cash'
+        }, {
+            title: 'My Transactions',
+            url: '/transactions',
+            icon: 'swap'
         }
     ];
 

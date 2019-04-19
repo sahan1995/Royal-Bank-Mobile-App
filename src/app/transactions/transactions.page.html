@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            My Transactions
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>Select Your Account</ion-list-header>
+
+        <ion-item>
+            <ion-label>Account Number</ion-label>
+            <ion-select placeholder="Select One" *ngFor="let acc of accounts" (ionChange)="findAccount()"
+                        [(ngModel)]="accno">
+                <ion-select-option>{{acc.accountNumber}}</ion-select-option>
+
+            </ion-select>
+        </ion-item>
+
+    </ion-list>
+    <div padding>
+        <ion-segment [(ngModel)]="transaction">
+            <ion-segment-button value="deposit">
+               Deposits
+            </ion-segment-button>
+            <ion-segment-button value="withdraw">
+                Withdraw
+            </ion-segment-button>
+            <ion-segment-button value="transfer">
+                Transfer
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="transaction">
+        <ion-list *ngSwitchCase="'deposit'">
+            <ion-item *ngFor="let deposit of deposits">
+                <ion-card >
+                    <ion-card-content>
+                        Date and Time : <b>{{deposit.dateAndTime}}</b><br>
+                        Amount : <b>Rs {{deposit.amount}}.00</b><br>
+                        Depositor Name : <b>{{deposit.depositerName}}</b><br>
+                        Depsit Type : <b>{{deposit.depositType}}</b>
+                    </ion-card-content>
+                </ion-card>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'withdraw'">
+            <ion-item *ngFor="let withdraw of withdraws">
+                <ion-card >
+                    <ion-card-content>
+                        Date and Time : <b>{{withdraw.dateAndTime}}</b><br>
+                        Amount : <b>Rs {{withdraw.amount}}.00</b><br>
+                        Withdrawer Name : <b>{{withdraw.widthdrawerName}}</b><br>
+                        Withdraw Type : <b>{{withdraw.widthdrawType}}</b>
+                    </ion-card-content>
+                </ion-card>
+            </ion-item>
+
+        </ion-list>
+        <ion-list *ngSwitchCase="'transfer'">
+
+                <ion-item *ngFor="let transfer of transfers">
+                    <ion-card >
+                        <ion-card-content>
+                            Date and Time : <b>{{transfer.dateAndTime}}</b><br>
+                            Amount : <b>Rs {{transfer.amount}}.00</b><br>
+                            Transfer Account : <b>{{transfer.depositAccount}}</b><br>
+                        </ion-card-content>
+                    </ion-card>
+
+            </ion-item>
+
+        </ion-list>
+    </div>
+</ion-content>
