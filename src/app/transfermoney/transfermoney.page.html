@@ -15,8 +15,8 @@
 
     <ion-item>
       <ion-label>Account Number</ion-label>
-      <ion-select placeholder="Select One" *ngFor="let acc of accounts" (ionChange)="findAccount()" [(ngModel)]="accno">
-        <ion-select-option>{{acc.accountNumber}}</ion-select-option>
+      <ion-select placeholder="Select One" (ionChange)="findAccount()" [(ngModel)]="accno">
+        <ion-select-option *ngFor="let acc of accounts" >{{acc.accountNumber}}</ion-select-option>
 
       </ion-select>
     </ion-item>

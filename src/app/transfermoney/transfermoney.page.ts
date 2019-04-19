@@ -121,6 +121,10 @@ export class TransfermoneyPage implements OnInit {
             this.msg = "Insufficient Money";
             this.presentToast();
             return;
+        }else if(this.acctype=="Fixed Account"){
+            this.msg = "Sorry You can't transfer money from Fixed Account";
+            this.presentToast();
+            return
         }
 
         var sendMoneyDTO={

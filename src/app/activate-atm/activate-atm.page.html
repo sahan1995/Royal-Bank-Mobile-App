@@ -1,0 +1,44 @@
+<ion-header>
+
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+       Activate ATM Card
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+  <ion-content padding>
+    <ion-list>
+      <ion-list-header>Select Your Account</ion-list-header>
+
+      <ion-item>
+        <ion-label>Account Number</ion-label>
+        <ion-select placeholder="Select One" *ngFor="let acc of accounts" (ionChange)="findAccount()"
+                    [(ngModel)]="accno">
+          <ion-select-option>{{acc.accountNumber}}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-card >
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Enter Card Number</ion-label>
+          <ion-input [(ngModel)]="code"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Enter PIN</ion-label>
+          <ion-input type="password" [(ngModel)]="pin"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" (click)="activeATM()">Active Card</ion-button>
+
+
+  </ion-content>

@@ -16,18 +16,24 @@ export class AppComponent {
             icon: 'home'
         },
         {
-            title: 'List',
-            url: '/list',
-            icon: 'list'
+            title: 'My Profile',
+            url: '/profile',
+            icon: 'contact'
         },
         {
             title: 'Transfer Money',
             url: '/transfermoney',
             icon: 'cash'
-        }, {
+        },
+        {
             title: 'My Transactions',
             url: '/transactions',
             icon: 'swap'
+        },
+        {
+            title: 'Activate ATM Card',
+            url: '/activate-atm',
+            icon: 'card'
         }
     ];
 

@@ -12,12 +12,13 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'list',
+    path: 'profile',
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: '', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'transfermoney', loadChildren: './transfermoney/transfermoney.module#TransfermoneyPageModule' },
-  { path: 'transactions', loadChildren: './transactions/transactions.module#TransactionsPageModule' }
+  { path: 'transactions', loadChildren: './transactions/transactions.module#TransactionsPageModule' },
+  { path: 'activate-atm', loadChildren: './activate-atm/activate-atm.module#ActivateATMPageModule' }
 ];
 
 @NgModule({
