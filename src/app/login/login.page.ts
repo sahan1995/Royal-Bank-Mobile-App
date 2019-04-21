@@ -34,16 +34,7 @@ export class LoginPage implements OnInit {
         this.route.navigate(["/home"])
 
     },error1 => {
-      this.loginS.loginServer3(loginDTO).subscribe(result=>{
-          localStorage.setItem("fname",result["fname"])
-          localStorage.setItem("lname",result["lname"])
-          localStorage.setItem("id",result["id"])
-          localStorage.setItem("role",result["role"])
-
-          this.route.navigate(["/home"])
-      },error2 => {
-        this.alert();
-      })
+     this.alert();
     })
   }
 

@@ -22,10 +22,6 @@ export class ActivateATMPage implements OnInit {
     clientAccounts() {
         this.atmSer.clientAccounts(localStorage.getItem("id")).subscribe(result => {
             this.accounts = result["bankAccountDTOS"];
-        }, error1 => {
-            this.atmSer.clientAccountsServer1(localStorage.getItem("id")).subscribe(result => {
-                this.accounts = result["bankAccountDTOS"];
-            })
         })
     }
 
@@ -34,13 +30,6 @@ export class ActivateATMPage implements OnInit {
         this.atmSer.findAccount(this.accno).subscribe(result => {
            this.accDTO = result;
 
-        },error1 => {
-            this.atmSer.findAccountServer1(this.accno).subscribe(result=>{
-
-
-                this.accDTO = result;
-
-            })
         })
     }
     activeATM(){
@@ -54,12 +43,7 @@ export class ActivateATMPage implements OnInit {
             this.route.navigate(["/home"]);
 
         },error1 => {
-          this.atmSer.createATMCardserver3(atmDTO).subscribe(re=>{
-              this.alert("ATM card Activated ");
-              this.route.navigate(["/home"]);
-          },error2 => {
-              this.alert("Failed to Activate");
-          })
+            alert("Failed to Active")
         })
     }
     async alert(msg) {

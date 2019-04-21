@@ -73,11 +73,7 @@ export class TransfermoneyPage implements OnInit {
     clientAccounts() {
         this.transfer.clientAccounts(localStorage.getItem("id")).subscribe(result => {
             this.accounts = result["bankAccountDTOS"];
-        },error1 => {
-            this.transfer.clientAccountsServer1(localStorage.getItem("id")).subscribe(result=>{
-                this.accounts = result["bankAccountDTOS"];
-            })
-        })
+        });
     }
 
     findAccount() {
@@ -86,13 +82,6 @@ export class TransfermoneyPage implements OnInit {
             this.sendDTO = result;
             this.acctype = result["accountType"];
             this.amount = result["amount"];
-
-        },error1 => {
-            this.transfer.findAccountServer1(this.accno).subscribe(result=>{
-                this.sendDTO = result;
-                this.acctype = result["accountType"];
-                this.amount = result["amount"];
-            })
         })
     }
 
@@ -102,16 +91,9 @@ export class TransfermoneyPage implements OnInit {
             this.depositDTO = result;
             this.depoName = result["clientDTO"]["fname"] + " " + result["clientDTO"]["lname"]
             this.depoAcctype = result["accountType"];
-
-
         },error1 => {
-            this.transfer.findAccountServer1(this.depoAccno).subscribe(result=>{
-                console.log(result);
-                this.depositDTO = result;
-                this.depoName = result["clientDTO"]["fname"] + " " + result["clientDTO"]["lname"]
-                this.depoAcctype = result["accountType"];
-
-            })
+            this.msg = "Account Number Not valid";
+            this.presentToast();
         })
     }
 
@@ -138,12 +120,6 @@ export class TransfermoneyPage implements OnInit {
             this.msg = "Money Transfer Successfully";
             this.route.navigate(["/home"]);
             this.presentToast();
-        },error1 => {
-            this.transfer.transferMoneyServer3(sendMoneyDTO).subscribe(res=>{
-                this.msg = "Money Transfer Successfully";
-                this.presentToast();
-                this.route.navigate(["/home"]);
-            })
         })
 
 

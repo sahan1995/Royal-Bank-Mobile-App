@@ -28,10 +28,6 @@ export class TransactionsPage implements OnInit {
     clientAccounts() {
         this.transactions.clientAccounts(localStorage.getItem("id")).subscribe(result => {
             this.accounts = result["bankAccountDTOS"];
-        }, error1 => {
-            this.transactions.clientAccountsServer1(localStorage.getItem("id")).subscribe(result => {
-                this.accounts = result["bankAccountDTOS"];
-            })
         })
     }
 
@@ -42,12 +38,6 @@ export class TransactionsPage implements OnInit {
                this.deposits = result["depositDTOS"];
                this.withdraws = result["widthdrawDTOS"];
                this.transfers = result["sendMoneyDTOS"];
-        }, error1 => {
-            this.transactions.findAccountServer1(this.accno).subscribe(result => {
-                this.deposits = result["depositDTOS"];
-                this.withdraws = result["widthdrawDTOS"];
-                this.transfers = result["sendMoneyDTOS"];
-            })
         })
     }
 

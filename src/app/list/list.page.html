@@ -4,24 +4,25 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      My Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+<ion-content >
+  <div class="profile">
+    <ion-row color="primary" justify-content-center >
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12" style="text-align: center">
+
+
+            <br>
+            <br>
+            <img src="assets/man.png" style="width: 100px; height: 100px">
+            <br>
+            <br>
+        <!--<h4>{{}}</h4>-->
+</ion-col>
+    </ion-row>
+  </div>
+
 </ion-content>
