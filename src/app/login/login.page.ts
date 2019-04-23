@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
         localStorage.setItem("lname",result["lname"])
         localStorage.setItem("id",result["id"])
         localStorage.setItem("role",result["role"])
+        localStorage.setItem("uname",this.userName);
         this.route.navigate(["/home"])
 
     },error1 => {

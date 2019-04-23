@@ -37,6 +37,11 @@ export class AppComponent {
             title: 'Activate ATM Card',
             url: '/activate-atm',
             icon: 'card'
+        },
+        {
+            title:'Log Out',
+            url: '/logout',
+            icon: 'log-out'
         }
     ];
 
