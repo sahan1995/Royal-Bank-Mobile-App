@@ -39,10 +39,16 @@ export class AppComponent {
             icon: 'card'
         },
         {
+            title:'My Accounts',
+            url: '/accounts',
+            icon: 'md-analytics'
+        },
+        {
             title:'Log Out',
             url: '/logout',
             icon: 'log-out'
         }
+
     ];
 
     constructor(

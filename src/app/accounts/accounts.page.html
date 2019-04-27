@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      My Accounts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid justify-content-center>
+    <ion-row  >
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+
+            <ion-card-title>Accounts</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <h1><b>00{{accountacount}}</b></h1>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-list>
+    <ion-list-header>Select Account</ion-list-header>
+
+    <ion-item>
+      <ion-label>Account Number</ion-label>
+      <ion-select placeholder="Select One"  (ionChange)="findAccount()"
+                  [(ngModel)]="accno">
+        <ion-select-option *ngFor="let acc of accounts">{{acc.accountNumber}}</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-card justify-content-center>
+    <ion-card-header>
+
+      <ion-card-title>Account Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-row>
+        <ion-col size="6">
+        Account Number
+        </ion-col>
+
+        <ion-col size="6">
+          {{accno}}
+        </ion-col>
+        <ion-col size="6">
+          Account Type
+        </ion-col>
+
+        <ion-col size="6">
+         {{accountType}}
+        </ion-col>
+        <ion-col size="6">
+          Balance
+        </ion-col>
+
+        <ion-col size="6">
+        {{balance}}
+        </ion-col>
+      </ion-row>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row  >
+    <ion-col size="12">
+      <ion-card>
+        <ion-card-header size="12">
+
+          <ion-card-title>
+            <ion-row>
+              <ion-col size="8">
+               Transactions
+              </ion-col>
+
+              <ion-col size="4">
+                00{{transactions}}
+              </ion-col>
+            </ion-row>
+
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+
+          <ion-row>
+            <ion-col size="6">
+              Deposits
+            </ion-col>
+
+            <ion-col size="6">
+              00{{deposits}}
+            </ion-col>
+            <ion-col size="6">
+              Withdraws
+            </ion-col>
+
+            <ion-col size="6">
+              00{{withdraws}}
+            </ion-col>
+            <ion-col size="6">
+              Transfers
+            </ion-col>
+
+            <ion-col size="6">
+              00{{transfers}}
+            </ion-col>
+          </ion-row>
+
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>
