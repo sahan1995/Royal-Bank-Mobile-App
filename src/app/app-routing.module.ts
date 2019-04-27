@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'transactions', loadChildren: './transactions/transactions.module#TransactionsPageModule' },
   { path: 'activate-atm', loadChildren: './activate-atm/activate-atm.module#ActivateATMPageModule' },
   { path: 'logout', loadChildren: './logout/logout.module#LogoutPageModule' },
-  { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsPageModule' }
+  { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsPageModule' },
+  { path: 'deactive-atm', loadChildren: './deactive-atm/deactive-atm.module#DeactiveAtmPageModule' }
 ];
 
 @NgModule({

@@ -39,6 +39,11 @@ export class AppComponent {
             icon: 'card'
         },
         {
+            title:'Deactive ATM Card',
+            url: '/deactive-atm',
+            icon: 'card'
+        },
+        {
             title:'My Accounts',
             url: '/accounts',
             icon: 'md-analytics'
@@ -48,6 +53,7 @@ export class AppComponent {
             url: '/logout',
             icon: 'log-out'
         }
+
 
     ];
 

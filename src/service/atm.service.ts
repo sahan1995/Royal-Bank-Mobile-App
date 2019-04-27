@@ -20,5 +20,11 @@ export class AtmService {
     public createATMCard(atm){
         return this.http.post(this.url+"atmcards",atm);
     }
+    public reqdeactiveATM(pin,nic){
+        return this.http.get(this.url+"atmcards/reqDeactive/"+pin+"/"+nic);
+    }
 
+    public deactivate(pin){
+        this.http.delete(this.url+"atmcards/"+pin).subscribe();
+    }
 }
